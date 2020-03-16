@@ -14,14 +14,17 @@ namespace GitTest.Foundations
             return users;
         }
 
-        public void Create(User userToCreate)
+        public bool Create(User userToCreate)
         {
             if (!ContainsUser(userToCreate))
+            {
                 users.Add(userToCreate);
+                return true;
+            }
             else
-                throw new FormatException("user already exists");
+                return false;
         }
-        public void Update(User userToUpdate)
+        public bool Update(User userToUpdate)
         {
             //get 
             int index = -1;
@@ -31,22 +34,27 @@ namespace GitTest.Foundations
                     index = i;
             }
             if (index != -1)
+            {
                 users[index] = userToUpdate;
+                return true;
+            }
             else
-                throw new FormatException("did not find user");
+                return false;
 
         }
-
-        public void Delete(User userToDelete)
+        public bool Delete(User userToDelete)
         {
             int index = -1;
             for (int i = 0; i < users.Count; i++)
                 if (users[i].Id == userToDelete.Id)
                     index = i;
             if (index != -1)
+            {
                 users.RemoveAt(index);
+                return true;
+            }
             else
-                throw new FormatException("user not found");
+                return false;
         }
         public User GetById(int id)
         {
@@ -57,7 +65,9 @@ namespace GitTest.Foundations
 
             return null;
         }
-        private bool ContainsUser(User user)
+
+
+         bool ContainsUser(User user)
         {
             foreach(User u in users)
             {
