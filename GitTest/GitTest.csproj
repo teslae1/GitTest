@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mediators\" />
     <Folder Include="Controllers\" />
     <Folder Include="Presentations\" />
   </ItemGroup>
