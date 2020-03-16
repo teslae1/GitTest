@@ -18,9 +18,11 @@ namespace GitTest
                 {
                     case 1:
                         var createView = new PCreateUser();
+                        createView.RunCreate();
                         break;
                     case 2:
                         var rudView = new PRudUser();
+                        rudView.RunCreate();
                         break;
                 }
             
