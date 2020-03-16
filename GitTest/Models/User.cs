@@ -27,7 +27,10 @@ namespace GitTest.Models
             Id = incrementer++;
         }
         
-
+        public void SetName(string newName)
+        {
+            Name = newName;
+        }
 
     }
 }
