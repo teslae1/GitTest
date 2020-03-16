@@ -7,7 +7,7 @@ namespace GitTest.Models
     //karl
     class User
     {
-        public static int incrementer = 100;
+        static int incrementer = 100;
         public int Id { get; private set; }
         public string Name { get; private set; }
         public User(int id, string name)
