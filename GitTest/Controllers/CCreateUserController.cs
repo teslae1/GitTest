@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GitTest.Mediators;
+using GitTest.Models;
 
 namespace GitTest.Controllers
 {
@@ -10,7 +11,8 @@ namespace GitTest.Controllers
         MUserMediator m = new MUserMediator();
         public void CreateUser(string navn)
         {
-            m.CreateUser()
+            var user = new User(navn);
+            m.Create(user);
         }
     }
 }

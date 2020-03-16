@@ -12,7 +12,7 @@ namespace GitTest.Controllers
         
         public List<User> GetAll()
         {
-            return m.GetAll();
+            return m.ReadAll();
         }
 
         public User GetSpecificUser(int id)
@@ -21,13 +21,14 @@ namespace GitTest.Controllers
         }
         public void DeleteSpecificUser(int id)
         {
-            m.DeleteUser(id);
+            var user = GetSpecificUser(id);
+            m.Delete(user);
         }
 
         public void UpdateUser(int id, string navn)
         {
             var obj = GetSpecificUser(id);
-            m.Update(obj, navn);
+            m.Update(obj, );
 
         }
     }
