@@ -28,7 +28,8 @@ namespace GitTest.Controllers
         public void UpdateUser(int id, string navn)
         {
             var obj = GetSpecificUser(id);
-            m.Update(obj, );
+            obj.SetName(navn);
+            m.Update(obj);
 
         }
     }
