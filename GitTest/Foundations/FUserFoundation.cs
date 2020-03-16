@@ -24,8 +24,30 @@ namespace GitTest.Foundations
         public void Update(User userToUpdate)
         {
             //get 
+            int index = -1;
+            for(int i = 0; i < users.Count; i++)
+            {
+                if (users[i].Id == userToUpdate.Id)
+                    index = i;
+            }
+            if (index != -1)
+                users[index] = userToUpdate;
+            else
+                throw new FormatException("did not find user");
+
         }
 
+        public void Delete(User userToDelete)
+        {
+            int index = -1;
+            for (int i = 0; i < users.Count; i++)
+                if (users[i].Id == userToDelete.Id)
+                    index = i;
+            if (index != -1)
+                users.RemoveAt(index);
+            else
+                throw new FormatException("user not found");
+        }
         public User GetById(int id)
         {
             foreach (User user in users)
@@ -35,7 +57,6 @@ namespace GitTest.Foundations
 
             return null;
         }
-
         private bool ContainsUser(User user)
         {
             foreach(User u in users)
