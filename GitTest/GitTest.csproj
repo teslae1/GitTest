@@ -10,7 +10,6 @@
     <Folder Include="Mediators\" />
     <Folder Include="Controllers\" />
     <Folder Include="Foundations\" />
-    <Folder Include="Presentations\" />
   </ItemGroup>
 
 </Project>

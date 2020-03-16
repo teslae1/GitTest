@@ -11,6 +11,11 @@ namespace GitTest.Mediators
         List<User> users = new List<User>();
         FUserFoundation foundation = new FUserFoundation();
 
+        public MUserMediator()
+        {
+            users = foundation.GetAll();
+        }
+
         public User Read(int userId)
         {
             User selectedUser = null;
