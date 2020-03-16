@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GitTest.Mediators;
+using GitTest.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +8,11 @@ namespace GitTest.Controllers
 {
     class CCreateUserController
     {
-        Mediator m = new Mediator();
-        public void CreateUser(string navn)
+        MUserMediator m = new MUserMediator();
+        public void CreateUser(string name)
         {
-            m.CreateUser()
+            var user = new User(name);
+            m.Create(user);
         }
     }
 }
