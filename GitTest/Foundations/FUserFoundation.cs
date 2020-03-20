@@ -26,35 +26,30 @@ namespace GitTest.Foundations
         }
         public bool Update(User userToUpdate)
         {
-            //get 
-            int index = -1;
-            for(int i = 0; i < users.Count; i++)
-            {
-                if (users[i].Id == userToUpdate.Id)
-                    index = i;
-            }
-            if (index != -1)
-            {
-                users[index] = userToUpdate;
-                return true;
-            }
-            else
-                return false;
+            var updated = new User(userToUpdate.Id, userToUpdate.Name);
 
+            for (int i = 0; i < users.Count; i++)
+                if (users[i].Id == userToUpdate.Id)
+                {
+
+                    users[i] = updated;
+                    return true;
+                }
+
+
+            return false;
         }
         public bool Delete(User userToDelete)
         {
-            int index = -1;
             for (int i = 0; i < users.Count; i++)
                 if (users[i].Id == userToDelete.Id)
-                    index = i;
-            if (index != -1)
-            {
-                users.RemoveAt(index);
-                return true;
-            }
-            else
-                return false;
+                {
+                    users.RemoveAt(i);
+                    return true;
+                }
+
+
+            return false;
         }
         public User GetById(int id)
         {
